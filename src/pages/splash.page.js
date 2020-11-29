@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
+import  styles  from '../stylesheets/splash.style';
 
 const Splash = ({navigation}) => {
     useEffect(() => {
@@ -17,16 +18,3 @@ const Splash = ({navigation}) => {
 }
 
 export default Splash;
-
-const styles = StyleSheet.create({
-    container:{
-        flex:1,
-        justifyContent:'center',
-        alignItems: 'center',
-        backgroundColor: '#fff'
-    },
-    text:{
-        fontSize: 25,
-        fontWeight: 'bold'
-    }
-})

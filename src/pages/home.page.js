@@ -1,6 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View, StatusBar, Image, TouchableOpacity, ScrollView } from 'react-native'
 import {Student, ITB, UGM, IPB, ITS, Undip} from '../../assets';
+import styles from '../stylesheets/home.style';
 
 let data=[
     {
@@ -47,34 +48,34 @@ export default function Home({navigation}) {
     return (
         <View style={styles.container}>
             <StatusBar backgroundColor='#fff' barStyle="dark-content" translucent/>
-            <View style={{padding: 20}}>
-                <View style={{borderRadius: 20, backgroundColor: '#34ebd8', flexDirection: 'row', justifyContent: 'space-between', padding:20}}>
-                    <View style={{padding:10, marginTop:7}}>
+            <View style={styles.wrapper}>
+                <View style={styles.headerWrapper}>
+                    <View style={styles.headerTextWrapper}>
                         <Text style={styles.headerText}>Choose</Text>
                         <Text style={styles.headerText}>Your</Text>
                         <Text style={styles.headerText}>University</Text>
                     </View>
-                    <Image source={Student} style={{width:130, height:130}}/>
+                    <Image source={Student} style={styles.image}/>
                 </View>
 
 
-                <View style={{marginTop:15}}>
-                    <Text style={{fontSize:20, fontWeight: 'bold'}}>University's</Text>
+                <View style={styles.sessionWrapper}>
+                    <Text style={styles.sessionTitle}>University's</Text>
                 </View>
 
 
-                <ScrollView style={{marginBottom:195}} showsVerticalScrollIndicator={false}>
+                <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
                     {data.map((data) => (
                         <View key={data.key} style={styles.listWrapper}>
-                                <View style={{flex:1, justifyContent: 'center', alignItems: 'baseline'}}>
-                                    <Image style={{width:90, height: 115, borderRadius:10}} source={data.image}/> 
+                                <View style={styles.imageWrapper}>
+                                    <Image style={styles.listImage} source={data.image}/> 
                                 </View>
-                                <View style={{flex:2, marginLeft:3}}>
-                                    <Text style={{fontSize:17, fontWeight: 'bold'}}>{data.name}</Text>
-                                    <Text style={{color:'grey', textAlign:'justify'}}>{data.caption}</Text>
+                                <View style={styles.listMidWrapper}>
+                                    <Text style={styles.midTextName}>{data.name}</Text>
+                                    <Text style={styles.midTextCaption}>{data.caption}</Text>
                                 </View>
-                                <TouchableOpacity style={{flex:0, justifyContent: 'center', alignItems: 'center', marginLeft:15}} onPress={() => onPressed(data)}>
-                                    <Text style={{color:'orange', fontWeight:'bold'}}>Detail</Text>
+                                <TouchableOpacity style={styles.button} onPress={() => onPressed(data)}>
+                                    <Text style={styles.buttonText}>Detail</Text>
                                 </TouchableOpacity>
                         </View>
                     ))}
@@ -84,24 +85,3 @@ export default function Home({navigation}) {
         </View>
     )
 }
-
-const styles = StyleSheet.create({
-    container:{
-        flex:1,
-        backgroundColor: '#fff'
-    },
-    headerText:{
-        color: '#fcfcfc', 
-        fontSize:22, 
-        fontWeight: 'bold'
-    },
-    listWrapper:{
-        marginTop: 15,
-        flexDirection: 'row',
-        backgroundColor: '#fff',
-        padding:10,
-        borderRadius:20,
-        borderWidth: 1,
-        borderColor: '#d1d1d1',
-    }
-})
