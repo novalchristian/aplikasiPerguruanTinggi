@@ -1,5 +1,7 @@
 import {Dimensions, StyleSheet} from 'react-native';
 
+const width = Dimensions.get('screen').width/3;
+const height = Dimensions.get('screen').height/7;
 export default StyleSheet.create({
     textWrapper:{
         marginTop:20, 
@@ -13,8 +15,8 @@ export default StyleSheet.create({
         fontSize: 15
       },
       image:{
-        width:170, 
-        height: 180, 
+        width, 
+        height, 
         borderRadius: 150
       },
       container: {
