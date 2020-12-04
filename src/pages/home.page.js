@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleSheet, Text, View, StatusBar, Image, TouchableOpacity, ScrollView } from 'react-native'
-import {Student, ITB, UGM, IPB, ITS, Undip} from '../../assets';
+import {HomeImage, ITB, UGM, IPB, ITS, Undip} from '../../assets';
 import styles from '../stylesheets/home.style';
 
 let data=[
@@ -55,7 +55,7 @@ export default function Home({navigation}) {
                         <Text style={styles.headerText}>Your</Text>
                         <Text style={styles.headerText}>University</Text>
                     </View>
-                    <Image source={Student} style={styles.image}/>
+                    <Image source={HomeImage} style={styles.image}/>
                 </View>
 
 
